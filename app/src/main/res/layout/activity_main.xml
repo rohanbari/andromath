@@ -27,16 +27,20 @@
 
             <Button
                 android:id="@+id/op1"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:onClick="checkAnswer"
                 android:text="OP1" />
 
             <Button
                 android:id="@+id/op2"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="checkAnswer"
                 android:text="OP2" />
         </TableRow>
 
@@ -44,16 +48,20 @@
 
             <Button
                 android:id="@+id/op3"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:onClick="checkAnswer"
                 android:text="OP3" />
 
             <Button
                 android:id="@+id/op4"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="checkAnswer"
                 android:text="OP4" />
         </TableRow>
     </TableLayout>

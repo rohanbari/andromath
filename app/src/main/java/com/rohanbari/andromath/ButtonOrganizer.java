@@ -27,22 +27,12 @@ public class ButtonOrganizer {
 
         Random random = new Random(System.nanoTime());
 
-        int value1 = ProblemGenerator.getVar1();
-        int value2 = ProblemGenerator.getVar2();
-        String op = ProblemGenerator.getOp();
-
-        if (op.equals("+")) {
-            result = value1 + value2;
-        } else if (op.equals("-")) {
-            result = value1 - value2;
-        } else {
-            result = value1 * value2;
-        }
+        result = getCorrectAnswer();
 
         List<String> strings = new ArrayList<>();
 
         for (int i = 0; i < 3; i++) {
-            int tolerance = random.nextInt(10) + 1;
+            int tolerance = random.nextInt(15) + 5;
             strings.add(String.valueOf(result * tolerance / 10));
         }
 
@@ -53,5 +43,27 @@ public class ButtonOrganizer {
         for (Button button : buttons) {
             button.setText(String.valueOf(strings.get(counter++)));
         }
+    }
+
+    /**
+     * Obtain the correct answer of the generated mathematical statement.
+     *
+     * @return The validated result
+     */
+    public static int getCorrectAnswer() {
+        int validResult;
+        int value1 = ProblemGenerator.getVar1();
+        int value2 = ProblemGenerator.getVar2();
+        String op = ProblemGenerator.getOp();
+
+        if (op.equals("+")) {
+            validResult = value1 + value2;
+        } else if (op.equals("-")) {
+            validResult = value1 - value2;
+        } else {
+            validResult = value1 * value2;
+        }
+
+        return validResult;
     }
 }
